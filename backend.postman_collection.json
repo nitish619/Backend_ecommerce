@@ -1,0 +1,90 @@
+{
+	"info": {
+		"_postman_id": "d158ff77-d497-43a8-a819-4950b39e2fcf",
+		"name": "backend",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "38426577"
+	},
+	"item": [
+		{
+			"name": "New Request",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"title\": \"Thor: God of Thunder\",\r\n    \"author\": \"Jason Aaron\",\r\n    \"publisher\": \"Marvel Comics\",\r\n    \"issueNumber\": 1,\r\n    \"price\": 28.00,\r\n    \"stock\": 90,\r\n    \"description\": \"The saga of Thor as he battles gods and monsters across time.\",\r\n    \"coverImage\": \"https://example.com/images/thor_god_of_thunder.jpg\"\r\n  }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5000/api/comicbooks/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"comicbooks",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:5000/api/comicbooks/6710cd4b91eb6dfa69380d26",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"title\": \"Spider-Man Updated\",\r\n  \"author\": \"Stan Lee\",\r\n  \"publisher\": \"Marvel\",\r\n  \"issueNumber\": 1,\r\n  \"price\": 12.99,\r\n  \"stock\": 150,\r\n  \"description\": \"Updated issue of Spider-Man\",\r\n  \"coverImage\": \"http://example.com/spiderman_new.jpg\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5000/api/comicbooks/6710cd4b91eb6dfa69380d26",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"comicbooks",
+						"6710cd4b91eb6dfa69380d26"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:5000/api/comicbooks",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:5000/api/comicbooks",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"comicbooks"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
