@@ -1,6 +1,6 @@
 const ComicBook = require('../models/comicBooks.js');
 
-// @desc Create a comic book
+// Create a comic book
 const createComicBook = async (req, res) => {
   try {
     const { title, author, publisher, issueNumber, price, stock, description, coverImage } = req.body;
@@ -23,7 +23,7 @@ const createComicBook = async (req, res) => {
   }
 };
 
-// @desc Get all comic books
+// Get all comic books
 const getAllComicBooks = async (req, res) => {
   try {
     const pageSize = parseInt(req.query.pageSize) || 10; // Default page size
@@ -47,7 +47,7 @@ const getAllComicBooks = async (req, res) => {
       sortBy = { createdAt: -1 }; // Default sort by creation date (newest first)
     }
 
-    // Pagination and data retrieval
+    
     const count = await ComicBook.countDocuments(queryObject); // Total number of documents
     const comicBooks = await ComicBook.find(queryObject)
       .sort(sortBy)
@@ -77,7 +77,7 @@ const getComicBookById = async (req, res) => {
   }
 };
 
-// @desc Update a comic book
+// Update a comic book
 const updateComicBook = async (req, res) => {
   try {
     const { title, author, publisher, issueNumber, price, stock, description, coverImage } = req.body;
@@ -95,7 +95,7 @@ const updateComicBook = async (req, res) => {
   }
 };
 
-// @desc Delete a comic book
+// Delete a comic book
 const deleteComicBook = async (req, res) => {
   try {
     const comicBook = await ComicBook.findByIdAndDelete(req.params.id);
